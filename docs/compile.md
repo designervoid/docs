@@ -14,10 +14,21 @@ The software is likely to compile and work properly on most Linux systems. It sh
 2) Install the newest versions of:
     - `make`
     - `cmake` version 3.0.2 or later
-   - `g++` or `clang` (or another C++14-compatible compiler as appropriate for your operating system).
+    - `g++` or `clang` (or another C++14-compatible compiler as appropriate for your operating system).
     - OpenSSL (including C header files) version 1.1.1 or later
 
-3) Suppose that you have fetched the source tree to directory `~/ton`, where `~` is your home directory, and that you have created an empty directory `~/liteclient-build`. Then run the following in a terminal on a Linux system:
+3) Suppose that you have fetched the source tree to directory `~/ton`, where `~` is your home directory, and that you have created an empty directory `~/liteclient-build`.
+
+    Mac users should provide these environment variables:
+
+    ```
+        export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+        export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+        export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+        export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+    ```
+
+    Then run the following in a terminal on a Linux system:
 
     ```
     cd ~/liteclient-build
